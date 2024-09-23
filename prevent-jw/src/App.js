@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';
+import Loading from './Loading';
 
 const App = () => {
   const [fileName, setFileName] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setFileName(file.name);
+      setLoading(true);
       console.log('파일 업로드됨:', file.name);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
@@ -17,13 +23,21 @@ const App = () => {
     const file = event.dataTransfer.files[0];
     if (file) {
       setFileName(file.name);
+      setLoading(true);
       console.log('파일 업로드됨:', file.name);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
   const handleDragOver = (event) => {
     event.preventDefault();
   };
+
+  if (loading) {
+    return <Loading fileName={fileName} />; // 파일 이름을 Loading 컴포넌트에 전달
+  }
 
   return (
     <div className="container" onDrop={handleDrop} onDragOver={handleDragOver}>
@@ -41,7 +55,7 @@ const App = () => {
       </label>
       
       <div className="drop-area">
-        <p><center>여기로 파일을 드래그 앤 드롭하세요!</center></p>
+        <p>여기로 파일을 드래그 앤 드롭하세요!</p>
       </div>
       
       {fileName && <p className="file-name">업로드된 파일: {fileName}</p>}
