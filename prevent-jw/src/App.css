@@ -78,3 +78,9 @@ body {
   font-size: 16px;
   color: #333;
 }
+
+.error-message {
+  color: red; /* 빨간색 */
+  font-weight: bold; /* 굵은 글씨 */
+  margin-top: 10px; /* 위쪽 여백 */
+}
