@@ -1,0 +1,49 @@
+.complete-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f7fa; /* 메인 및 로딩 화면과 일관성 유지 */
+    color: #333;
+    text-align: center;
+  }
+  
+  .complete-container h1 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .complete-container p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .complete-container a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .complete-container a:hover {
+    color: #ff9900;
+  }
+  
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* 메인 컬러 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
